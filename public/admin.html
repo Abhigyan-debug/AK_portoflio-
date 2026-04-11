@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#050508;--bg2:#0a0a10;--bg3:#0f0f18;
+  --surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f0f8;--text2:#9090a8;--text3:#5a5a72;
+  --cyan:#00e5ff;--violet:#b06bff;--pink:#ff4db8;--green:#00ff9d;--orange:#ff7a2f;
+  --grad1:linear-gradient(135deg,#00e5ff,#b06bff,#ff4db8);
+  --font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;
+  --radius:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+/* Login */
+#login-screen{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+}
+.login-box{
+  width:360px;padding:40px;background:var(--bg3);
+  border:1px solid var(--border2);border-radius:20px;
+}
+.login-logo{font-family:var(--font-display);font-size:1.6rem;font-weight:800;
+  background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  text-align:center;margin-bottom:8px;
+}
+.login-sub{text-align:center;color:var(--text3);font-size:0.84rem;margin-bottom:32px;font-family:var(--font-mono);}
+.form-group{margin-bottom:16px;}
+.form-label{display:block;font-family:var(--font-mono);font-size:0.7rem;color:var(--text3);letter-spacing:0.1em;margin-bottom:6px;}
+.form-input{width:100%;padding:11px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  color:var(--text);font-family:var(--font-body);font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+.form-input:focus{border-color:var(--cyan);}
+.btn-login{width:100%;padding:13px;background:var(--grad1);color:#fff;border-radius:8px;
+  font-family:var(--font-display);font-weight:700;font-size:0.9rem;margin-top:8px;transition:opacity 0.2s;}
+.btn-login:hover{opacity:0.9;}
+.login-error{color:var(--pink);font-size:0.8rem;text-align:center;margin-top:8px;font-family:var(--font-mono);}
+
+/* Dashboard */
+#dashboard{display:none;}
+.admin-layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
+.sidebar{background:var(--bg2);border-right:1px solid var(--border);padding:24px 0;display:flex;flex-direction:column;}
+.sidebar-logo{font-family:var(--font-display);font-size:1.2rem;font-weight:800;
+  background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  padding:0 24px 24px;border-bottom:1px solid var(--border);
+}
+.sidebar-nav{flex:1;padding:16px 12px;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;
+  font-size:0.88rem;color:var(--text2);transition:all 0.2s;margin-bottom:4px;cursor:pointer;
+}
+.nav-item:hover,.nav-item.active{background:var(--surface);color:var(--text);}
+.nav-item.active{color:var(--cyan);}
+.sidebar-logout{padding:12px 24px;margin:12px;}
+.logout-btn{width:100%;padding:10px;border:1px solid var(--border2);border-radius:8px;
+  color:var(--text2);font-family:var(--font-mono);font-size:0.78rem;transition:all 0.2s;}
+.logout-btn:hover{border-color:var(--pink);color:var(--pink);}
+.main { padding: 32px; overflow: auto; }
+.page-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom: 4px; }
+.page-sub{font-size:0.84rem;color:var(--text3);font-family:var(--font-mono);margin-bottom:32px;}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.stat-card{padding:20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);}
+.stat-card-num{font-family:var(--font-display);font-size:2rem;font-weight:800;
+  background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-card-label{font-size:0.78rem;color:var(--text3);font-family:var(--font-mono);margin-top:4px;}
+.table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.table-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.table-header-title{font-family:var(--font-display);font-weight:700;font-size:0.95rem;}
+table{width:100%;border-collapse:collapse;}
+th{padding:12px 16px;text-align:left;font-family:var(--font-mono);font-size:0.7rem;
+  color:var(--text3);letter-spacing:0.1em;border-bottom:1px solid var(--border);background:var(--bg3);}
+td{padding:14px 16px;font-size:0.84rem;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--surface);}
+.badge{padding:3px 8px;border-radius:4px;font-family:var(--font-mono);font-size:0.68rem;}
+.badge-unread{background:rgba(0,229,255,0.1);color:var(--cyan);}
+.badge-read{background:var(--surface);color:var(--text3);}
+.message-preview{max-width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text2);}
+.action-btn{padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:0.75rem;
+  transition:all 0.2s;font-family:var(--font-mono);}
+.action-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+.action-btn.delete:hover{border-color:var(--pink);color:var(--pink);}
+.tab-section{display:none;}
+.tab-section.active{display:block;}
+.no-data{padding:48px;text-align:center;color:var(--text3);font-family:var(--font-mono);font-size:0.84rem;}
+</style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">Admin Panel</div>
+    <div class="login-sub">Portfolio CMS & Analytics</div>
+    <div class="form-group">
+      <label class="form-label">USERNAME</label>
+      <input type="text" class="form-input" id="login-user" placeholder="admin">
+    </div>
+    <div class="form-group">
+      <label class="form-label">PASSWORD</label>
+      <input type="password" class="form-input" id="login-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+    </div>
+    <button class="btn-login" onclick="doLogin()">Sign In →</button>
+    <div class="login-error" id="login-error"></div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard">
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">AN. Admin</div>
+      <nav class="sidebar-nav">
+        <div class="nav-item active" onclick="showTab('overview')">📊 Overview</div>
+        <div class="nav-item" onclick="showTab('messages')">📬 Messages <span id="unread-badge" style="margin-left:auto;background:var(--cyan);color:#000;font-size:0.65rem;padding:2px 6px;border-radius:10px;font-family:var(--font-mono);display:none;"></span></div>
+        <div class="nav-item" onclick="showTab('visitors')">👁 Visitors</div>
+        <div class="nav-item" onclick="showTab('analytics')">📈 Analytics</div>
+      </nav>
+      <div class="sidebar-logout">
+        <button class="logout-btn" onclick="doLogout()">⏻ Sign Out</button>
+      </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Overview Tab -->
+      <div class="tab-section active" id="tab-overview">
+        <div class="page-title">Dashboard Overview</div>
+        <div class="page-sub" id="last-updated">Loading...</div>
+        <div class="stats-row" id="stats-row">
+          <div class="stat-card"><div class="stat-card-num" id="s-messages">–</div><div class="stat-card-label">Total Messages</div></div>
+          <div class="stat-card"><div class="stat-card-num" id="s-unread">–</div><div class="stat-card-label">Unread Messages</div></div>
+          <div class="stat-card"><div class="stat-card-num" id="s-visitors">–</div><div class="stat-card-label">Total Visitors</div></div>
+          <div class="stat-card"><div class="stat-card-num" id="s-today">–</div><div class="stat-card-label">Today's Visitors</div></div>
+        </div>
+        <div class="table-wrap">
+          <div class="table-header"><span class="table-header-title">Recent Messages</span></div>
+          <table>
+            <thead><tr><th>NAME</th><th>EMAIL</th><th>SUBJECT</th><th>DATE</th><th>STATUS</th></tr></thead>
+            <tbody id="recent-messages-table"><tr><td colspan="5" class="no-data">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Messages Tab -->
+      <div class="tab-section" id="tab-messages">
+        <div class="page-title">Messages</div>
+        <div class="page-sub">All contact form submissions</div>
+        <div class="table-wrap">
+          <div class="table-header">
+            <span class="table-header-title">All Messages</span>
+            <button class="action-btn" onclick="loadMessages()">↻ Refresh</button>
+          </div>
+          <table>
+            <thead><tr><th>NAME</th><th>EMAIL</th><th>MESSAGE</th><th>DATE</th><th>STATUS</th><th>ACTIONS</th></tr></thead>
+            <tbody id="messages-table"><tr><td colspan="6" class="no-data">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Visitors Tab -->
+      <div class="tab-section" id="tab-visitors">
+        <div class="page-title">Visitors</div>
+        <div class="page-sub">Real-time visitor analytics</div>
+        <div class="stats-row" style="grid-template-columns:repeat(3,1fr);">
+          <div class="stat-card"><div class="stat-card-num" id="v-total">–</div><div class="stat-card-label">Total Visitors</div></div>
+          <div class="stat-card"><div class="stat-card-num" id="v-today">–</div><div class="stat-card-label">Today</div></div>
+          <div class="stat-card"><div class="stat-card-num" id="v-month">–</div><div class="stat-card-label">This Month</div></div>
+        </div>
+      </div>
+      <!-- Analytics Tab -->
+      <div class="tab-section" id="tab-analytics">
+        <div class="page-title">Analytics</div>
+        <div class="page-sub">7-day traffic overview</div>
+        <div class="table-wrap">
+          <div class="table-header"><span class="table-header-title">Daily Stats (Last 7 Days)</span></div>
+          <table>
+            <thead><tr><th>DAY</th><th>VISITORS</th><th>MESSAGES</th></tr></thead>
+            <tbody id="analytics-table"><tr><td colspan="3" class="no-data">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+const API = '';  // Same origin
+let token = localStorage.getItem('admin_token');
+if (token) showDashboard();
+
+async function doLogin() {
+  const username = document.getElementById('login-user').value;
+  const password = document.getElementById('login-pass').value;
+  try {
+    const res = await fetch(`${API}/api/admin/login`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    const data = await res.json();
+    if (data.token) {
+      token = data.token;
+      localStorage.setItem('admin_token', token);
+      showDashboard();
+    } else {
+      document.getElementById('login-error').textContent = data.error || 'Login failed';
+    }
+  } catch {
+    document.getElementById('login-error').textContent = 'Connection error';
+  }
+}
+
+function showDashboard() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'block';
+  loadAnalytics();
+  loadMessages();
+}
+
+function doLogout() {
+  localStorage.removeItem('admin_token'); token = null;
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('dashboard').style.display = 'none';
+}
+
+function showTab(name) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(`tab-${name}`).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+async function loadAnalytics() {
+  try {
+    const res = await fetch(`${API}/api/admin/analytics`, { headers: { Authorization: `Bearer ${token}` } });
+    if (res.status === 401) { doLogout(); return; }
+    const data = await res.json();
+    document.getElementById('s-messages').textContent = data.totalMessages;
+    document.getElementById('s-unread').textContent = data.unreadMessages;
+    document.getElementById('s-visitors').textContent = data.totalVisitors?.toLocaleString() || 0;
+    document.getElementById('s-today').textContent = data.todayVisitors;
+    document.getElementById('v-total').textContent = data.totalVisitors?.toLocaleString() || 0;
+    document.getElementById('v-today').textContent = data.todayVisitors;
+    document.getElementById('v-month').textContent = data.monthVisitors?.toLocaleString() || 0;
+    document.getElementById('last-updated').textContent = `Last updated: ${new Date().toLocaleString()}`;
+    if (data.unreadMessages > 0) {
+      const badge = document.getElementById('unread-badge');
+      badge.textContent = data.unreadMessages; badge.style.display = 'inline';
+    }
+    // Chart data
+    const tbody = document.getElementById('analytics-table');
+    tbody.innerHTML = (data.chartData || []).map(d => `
+      <tr><td>${d.date}</td><td>${d.visitors}</td><td>${d.messages}</td></tr>
+    `).join('') || '<tr><td colspan="3" class="no-data">No data</td></tr>';
+    // Recent messages
+    const rt = document.getElementById('recent-messages-table');
+    rt.innerHTML = (data.recentMessages || []).map(m => `
+      <tr>
+        <td>${m.name}</td>
+        <td style="color:var(--cyan)">${m.email}</td>
+        <td>${m.subject}</td>
+        <td style="color:var(--text3);font-family:var(--font-mono);font-size:0.75rem">${new Date(m.createdAt).toLocaleDateString()}</td>
+        <td><span class="badge ${m.read ? 'badge-read' : 'badge-unread'}">${m.read ? 'Read' : 'New'}</span></td>
+      </tr>
+    `).join('') || '<tr><td colspan="5" class="no-data">No messages yet</td></tr>';
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function loadMessages() {
+  try {
+    const res = await fetch(`${API}/api/admin/messages`, { headers: { Authorization: `Bearer ${token}` } });
+    const data = await res.json();
+    const tbody = document.getElementById('messages-table');
+    tbody.innerHTML = (data.messages || []).map(m => `
+      <tr id="msg-${m._id}">
+        <td style="font-weight:600">${m.name}</td>
+        <td style="color:var(--cyan)">${m.email}</td>
+        <td><div class="message-preview">${m.message}</div><div style="font-size:0.75rem;color:var(--text3);margin-top:2px">${m.subject}</div></td>
+        <td style="color:var(--text3);font-family:var(--font-mono);font-size:0.75rem;white-space:nowrap">${new Date(m.createdAt).toLocaleString()}</td>
+        <td><span class="badge ${m.read ? 'badge-read' : 'badge-unread'}">${m.read ? 'Read' : 'New'}</span></td>
+        <td style="white-space:nowrap">
+          ${!m.read ? `<button class="action-btn" onclick="markRead('${m._id}')">Mark Read</button> ` : ''}
+          <button class="action-btn delete" onclick="deleteMsg('${m._id}')">Delete</button>
+        </td>
+      </tr>
+    `).join('') || '<tr><td colspan="6" class="no-data">No messages yet</td></tr>';
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function markRead(id) {
+  await fetch(`${API}/api/admin/messages/${id}/read`, { method: 'PATCH', headers: { Authorization: `Bearer ${token}` } });
+  loadMessages(); loadAnalytics();
+}
+
+async function deleteMsg(id) {
+  if (!confirm('Delete this message?')) return;
+  await fetch(`${API}/api/admin/messages/${id}`, { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } });
+  document.getElementById(`msg-${id}`)?.remove();
+}
+</script>
+</body>
+</html>
