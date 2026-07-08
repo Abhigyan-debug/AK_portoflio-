@@ -1,12 +1,12 @@
 // ═══════════════════════════════════════════
 // server.js — Full-Stack Portfolio Backend
-// Stack: Node.js + Express + MongoDB + Nodemailer
+// Stack: Node.js + Express + MongoDB + Resend
 // ═══════════════════════════════════════════
 
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
@@ -30,11 +30,17 @@ app.use('/api/', limiter);
 app.use('/api/contact', contactLimiter);
 
 // ─── MONGODB CONNECTION ───────────────────
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => console.log('✅ MongoDB connected'))
-  .catch(err => console.error('❌ MongoDB error:', err));
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
+console.log(`📡 Connecting to MongoDB: ${MONGODB_URI.replace(/\/\/.*@/, '//***@')}`);
+
+mongoose.connect(MONGODB_URI)
+  .then(() => console.log('✅ MongoDB connected successfully'))
+  .catch(err => {
+    console.error('❌ MongoDB connection FAILED:', err.message);
+    console.error('   Check your MONGODB_URI in .env and ensure your Atlas credentials are correct.');
+    console.error('   Also verify your IP is whitelisted in Atlas → Network Access.');
+    process.exit(1);
+  });
 
 // ─── SCHEMAS & MODELS ─────────────────────
 
@@ -80,14 +86,8 @@ const Contact = mongoose.model('Contact', contactSchema);
 const Visitor = mongoose.model('Visitor', visitorSchema);
 const Admin   = mongoose.model('Admin', adminSchema);
 
-// ─── EMAIL TRANSPORTER ────────────────────
-const transporter = nodemailer.createTransport({
-  service: 'gmail',                          // Change to your email provider
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,            // Use App Password for Gmail
-  },
-});
+// ─── EMAIL SERVICE (RESEND) ───────────────
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendNotificationEmail(contact) {
   const html = `
@@ -107,8 +107,8 @@ async function sendNotificationEmail(contact) {
       </div>
     </div>
   `;
-  await transporter.sendMail({
-    from: `"Portfolio Bot" <${process.env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: 'Portfolio Bot <onboarding@resend.dev>',
     to: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
     subject: `📬 New message from ${contact.name} — ${contact.subject}`,
     html,
@@ -124,12 +124,12 @@ async function sendAutoReply(contact) {
         <p style="color:#9090a8;margin-bottom:8px;font-size:0.85rem;">Your message:</p>
         <p style="color:#f0f0f8;">${contact.message}</p>
       </div>
-      <p style="color:#9090a8;">In the meantime, feel free to check out my <a href="${process.env.FRONTEND_URL || '#'}" style="color:#00e5ff;">portfolio</a> or connect on <a href="https://github.com" style="color:#b06bff;">GitHub</a>.</p>
-      <p style="color:#5a5a72;margin-top:32px;font-size:0.85rem;">— Alex Nova</p>
+      <p style="color:#9090a8;">In the meantime, feel free to check out my <a href="${process.env.FRONTEND_URL || '#'}" style="color:#00e5ff;">portfolio</a> or connect on <a href="https://github.com/Abhigyan-debug" style="color:#b06bff;">GitHub</a>.</p>
+      <p style="color:#5a5a72;margin-top:32px;font-size:0.85rem;">— Abhigyan Khare</p>
     </div>
   `;
-  await transporter.sendMail({
-    from: `"Alex Nova" <${process.env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: 'Abhigyan Khare <onboarding@resend.dev>',
     to: contact.email,
     subject: `Got your message! I'll be in touch shortly ✦`,
     html,
@@ -218,13 +218,32 @@ app.post('/api/contact', async (req, res) => {
 app.post('/api/admin/login', async (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log(`🔐 Login attempt — username: "${username}"`);
+
+    if (!username || !password) {
+      console.log('❌ Login failed: missing username or password');
+      return res.status(400).json({ error: 'Username and password are required' });
+    }
+
     const admin = await Admin.findOne({ username });
-    if (!admin) return res.status(401).json({ error: 'Invalid credentials' });
+    if (!admin) {
+      console.log(`❌ Login failed: no admin found with username "${username}"`);
+      const allAdmins = await Admin.find({}, { username: 1 });
+      console.log('   Existing admin usernames:', allAdmins.map(a => a.username));
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
     const valid = await bcrypt.compare(password, admin.password);
-    if (!valid) return res.status(401).json({ error: 'Invalid credentials' });
+    if (!valid) {
+      console.log(`❌ Login failed: password mismatch for "${username}"`);
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    console.log(`✅ Login successful — username: "${username}"`);
     const token = jwt.sign({ id: admin._id, username }, process.env.JWT_SECRET || 'secret_change_me', { expiresIn: '24h' });
     res.json({ success: true, token });
-  } catch {
+  } catch (err) {
+    console.error('❌ Login error:', err);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -303,7 +322,29 @@ app.post('/api/admin/setup', async (req, res) => {
   }
 });
 
+// ─── AUTO-SEED DEFAULT ADMIN ──────────────
+async function seedDefaultAdmin() {
+  try {
+    const count = await Admin.countDocuments();
+    if (count === 0) {
+      const defaultUser = process.env.ADMIN_USER || 'admin';
+      const defaultPass = process.env.ADMIN_PASS || 'admin1234';
+      await Admin.create({ username: defaultUser, password: defaultPass });
+      console.log(`✅ Default admin created — username: "${defaultUser}", password: "${defaultPass}"`);
+      console.log('⚠️  Change these credentials immediately in production!');
+    } else {
+      console.log(`✅ Admin user already exists (${count} found)`);
+    }
+  } catch (err) {
+    console.error('❌ Failed to seed admin:', err.message);
+  }
+}
+
 // ─── START SERVER ─────────────────────────
+mongoose.connection.once('open', () => {
+  seedDefaultAdmin();
+});
+
 app.listen(PORT, () => {
   console.log(`
   ╔═══════════════════════════════════╗

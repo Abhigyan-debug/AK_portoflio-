@@ -3,13 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Abhigyan Khare — AI Engineer crafting exceptional digital experiences. Expert in React, Node.js, Python, and cloud architecture.">
-<meta name="keywords" content="full stack developer, software engineer, react, nodejs, python, web developer portfolio">
+<meta name="description" content="Abhigyan Khare — AI/ML Engineer, Full Stack Developer & Generative AI Enthusiast. Building intelligent software using AI, ML, RAG and Full Stack Development.">
+<meta name="keywords" content="Abhigyan Khare, AI Engineer, Machine Learning, Full Stack Developer, Backend Developer, Portfolio, Generative AI, RAG, LangChain, Python, React">
 <meta name="author" content="Abhigyan Khare">
-<meta property="og:title" content="Abhigyan Khare — AI Engineer">
-<meta property="og:description" content="Crafting exceptional digital experiences with code and creativity.">
+<meta property="og:title" content="Abhigyan Khare | AI/ML Engineer">
+<meta property="og:description" content="AI/ML Engineer, Full Stack Developer and Generative AI Enthusiast Portfolio.">
 <meta property="og:type" content="website">
-<title>Abhigyan Khare — AI Engineer</title>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abhigyan Khare | AI/ML Engineer">
+<meta name="twitter:description" content="AI/ML Engineer, Full Stack Developer and Generative AI Enthusiast Portfolio.">
+<title>Abhigyan Khare | AI/ML Engineer</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abhigyan Khare",
+  "jobTitle": "AI/ML Engineer",
+  "url": "https://abhigyankhare.dev",
+  "sameAs": [
+    "https://github.com/Abhigyan-debug",
+    "https://www.linkedin.com/in/abhigyan-khare-169a31255"
+  ],
+  "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Full Stack Development", "Generative AI", "RAG"],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "GLA University"
+  }
+}
+</script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -432,6 +453,10 @@ nav.scrolled {
   overflow: hidden; position: relative;
   display: flex; align-items: center; justify-content: center;
 }
+.hero-avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center top;
+}
 .hero-avatar-inner {
   font-size: 8rem; line-height: 1;
   background: var(--grad1); -webkit-background-clip: text;
@@ -515,6 +540,11 @@ nav.scrolled {
   background: var(--bg3); border: 1px solid var(--border);
   overflow: hidden; position: relative;
   display: flex; align-items: center; justify-content: center;
+}
+.about-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center top;
+  position: relative; z-index: 1;
 }
 .about-image-bg {
   position: absolute; inset: 0;
@@ -1127,52 +1157,29 @@ footer {
 }
 
 /* ═══════════════════════════════════════════
-   SCROLLBAR
-═══════════════════════════════════════════ */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text3); }
-
-/* ═══════════════════════════════════════════
-   SECTION DIVIDER
-═══════════════════════════════════════════ */
-.divider {
-  height: 1px; background: var(--border);
-  position: relative; margin: 0;
-}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 60px; }
-  .hero-visual { order: -1; }
-  .hero-avatar-wrap { width: 280px; height: 280px; }
-  .hero-social { display: none; }
-  .about-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .featured-project { grid-column: span 2; }
-  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-  .blog-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  nav { padding: 16px 24px; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 640px) {
-  .section { padding: 80px 0; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .featured-project { grid-column: span 1; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .timeline::before { left: 80px; }
-  .timeline-date { width: 60px; font-size: 0.65rem; }
+            Open for Internship Opportunities
+        </div>
+        <h1 class="hero-name">
+          <span class="grad-text">Abhigyan</span><br>Khare.
+        </h1>
+        <div class="hero-role-line">
+          <span id="typing-text"></span><span class="cursor-blink"></span>
+        </div>
+        <p class="hero-desc">
+          Building intelligent software using Artificial Intelligence, Machine Learning, Retrieval-Augmented Generation (RAG) and Full Stack Development.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View My Work →</a>
+          <a href="#contact" class="btn-secondary">Let's Talk</a>
+          <a href="/resume/Abhigyan_Khare_Resume.pdf" class="btn-secondary" download>↓ Resume</a>
+        </div>
+        <!-- Social -->
+        <div class="hero-social">
+          <a href="https://github.com/Abhigyan-debug" class="social-icon" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.02-.01-2-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/abhigyan-khare" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>; }
   .timeline-dot { left: 73px; }
   .hero-actions { gap: 10px; }
   .hero-tag { display: none; }
@@ -1256,21 +1263,21 @@ Always learning, building, and exploring innovations in AI and development.
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">View My Work →</a>
           <a href="#contact" class="btn-secondary">Let's Talk</a>
-          <a href="#" class="btn-secondary" download>↓ Resume</a>
+          <a href="/resume/Abhigyan_Khare_Resume.pdf" class="btn-secondary" download>↓ Resume</a>
         </div>
         <!-- Social -->
         <div class="hero-social">
           <a href="#" class="social-icon" title="GitHub">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.02-.01-2-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
-          <a href="#" class="social-icon" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/abhigyan-khare-169a31255" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
           </a>
-          <a href="#" class="social-icon" title="Twitter">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2h3.55l-7.76 8.87L23 22h-7.15l-5.6-7.32L4.04 22H.49l8.3-9.5L1 2h7.32l5.06 6.69L18.24 2zm-1.25 18h1.97L7.1 4.04H5L17 20z"/></svg>
+          <a href="mailto:khareabhigyan2@gmail.com" class="social-icon" title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
-          <a href="#" class="social-icon" title="Dribbble">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm7.93 5.55a10.1 10.1 0 0 1 2.29 5.84c-.34-.07-3.72-.76-7.12-.33-.08-.18-.15-.36-.23-.55-.22-.52-.45-1.03-.7-1.52 3.76-1.53 5.47-3.74 5.76-3.44zM12 1.93c2.6 0 4.98.98 6.77 2.58-.25.27-1.79 2.33-5.41 3.7A52.2 52.2 0 0 0 8.88 2.4 10.15 10.15 0 0 1 12 1.93zm-5.25.9a65.24 65.24 0 0 1 4.42 5.72c-5.56 1.48-10.46 1.45-10.97 1.44A10.17 10.17 0 0 1 6.75 2.83zm-4.76 9.2c.06 0 5.74.08 11.67-1.7.33.63.63 1.28.9 1.93-5.3 1.49-8.1 5.57-8.35 5.97A10.12 10.12 0 0 1 2 12.03v-.01zm9.25 8.97c-2.25 0-4.32-.78-5.96-2.07.2-.37 2.48-4.16 8.27-5.98l.08-.02c1.47 3.82 2.07 7.03 2.22 7.9a10.06 10.06 0 0 1-4.61 1.17zm6.4-2.05c-.11-.64-.65-3.69-2.03-7.45 3.22-.52 6.04.33 6.38.44a10.14 10.14 0 0 1-4.35 7.01z"/></svg>
+          <a href="https://leetcode.com/u/abhigyan_khare" class="social-icon" title="LeetCode" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
           </a>
         </div>
       </div>
@@ -1279,20 +1286,20 @@ Always learning, building, and exploring innovations in AI and development.
           <div class="hero-avatar-ring2"></div>
           <div class="hero-avatar-ring"></div>
           <div class="hero-avatar">
-            <div class="hero-avatar-inner">A</div>
+            <img src="hero-photo.jpg" alt="Abhigyan Khare" loading="eager">
           </div>
           <div class="hero-tag top-right">
-            <span class="tag-icon">🚀</span>
+            <span class="tag-icon">🤖</span>
             <div>
-              <div style="font-size:0.78rem;font-weight:700;">50+ Projects</div>
-              <div style="font-size:0.68rem;color:var(--text3)">Delivered</div>
+              <div style="font-size:0.78rem;font-weight:700;">3+ AI Projects</div>
+              <div style="font-size:0.68rem;color:var(--text3)">Built & Shipped</div>
             </div>
           </div>
           <div class="hero-tag bottom-left">
-            <span class="tag-icon">⭐</span>
+            <span class="tag-icon">🎓</span>
             <div>
-              <div style="font-size:0.78rem;font-weight:700;">5.0 Rating</div>
-              <div style="font-size:0.68rem;color:var(--text3)">Client Reviews</div>
+              <div style="font-size:0.78rem;font-weight:700;">GLA University</div>
+              <div style="font-size:0.68rem;color:var(--text3)">B.Tech CSE (AI/ML)</div>
             </div>
           </div>
         </div>
@@ -1310,20 +1317,20 @@ Always learning, building, and exploring innovations in AI and development.
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-num" data-count="6">0</div>
-        <div class="stat-label">Years Experience</div>
+        <div class="stat-num" data-count="3">0</div>
+        <div class="stat-label">Major AI Projects</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-count="50">0</div>
-        <div class="stat-label">Projects Delivered</div>
+        <div class="stat-num" data-count="4">0</div>
+        <div class="stat-label">Professional Certifications</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-count="30">0</div>
-        <div class="stat-label">Happy Clients</div>
+        <div class="stat-num" data-count="10">0</div>
+        <div class="stat-label">Core Technologies</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-count="99">0</div>
-        <div class="stat-label">Satisfaction Rate %</div>
+        <div class="stat-num" id="stat-open">Open</div>
+        <div class="stat-label">For Internship</div>
       </div>
     </div>
   </div>
@@ -1336,57 +1343,57 @@ Always learning, building, and exploring innovations in AI and development.
       <div class="about-image-wrap reveal-left">
         <div class="about-image">
           <div class="about-image-bg"></div>
-          <div class="about-emoji">👨‍💻</div>
+          <img src="about-photo.jpg" alt="Abhigyan Khare" loading="lazy">
         </div>
         <div class="about-image-decoration"></div>
         <div class="about-exp-badge">
-          <div class="about-exp-num">Growing</div>
-          <div class="about-exp-label">EXPERIENCE</div>
+          <div class="about-exp-num">2028</div>
+          <div class="about-exp-label">GRADUATING</div>
         </div>
       </div>
       <div class="about-content reveal-right">
         <div class="section-label">About Me</div>
         <h2 class="section-title" style="margin-bottom:24px;">
-          Building the web,<br><span class="grad-text">one line at a time.</span>
+          Building AI-powered<br><span class="grad-text">intelligent software.</span>
         </h2>
         <p class="about-bio">
-          I'm a full-stack engineer with 6+ years of experience building scalable web applications and products used by millions. I specialize in React ecosystems, Node.js APIs, and cloud-native architecture. Beyond code, I care deeply about design, performance, and developer experience.
+          I'm a Computer Science undergraduate specializing in Artificial Intelligence & Machine Learning at GLA University. I enjoy building AI-powered applications using Machine Learning, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Full Stack Development and modern cloud technologies.
         </p>
         <p class="about-bio" style="margin-top:-16px;">
-          When I'm not shipping features, I'm writing technical articles, open-source contributing, or mentoring junior developers. I believe great software is the intersection of empathy and engineering.
+          My interests include Artificial Intelligence, Software Engineering, Data Science and scalable backend systems. I continuously improve my knowledge through real-world projects, certifications and hands-on development.
         </p>
         <div class="about-details">
           <div class="about-detail">
             <div class="about-detail-label">LOCATION</div>
-            <div class="about-detail-value">San Francisco, CA 🌉</div>
+            <div class="about-detail-value">Lucknow, India 🇮🇳</div>
           </div>
           <div class="about-detail">
             <div class="about-detail-label">AVAILABILITY</div>
-            <div class="about-detail-value" style="color:var(--green)">● Open to Work</div>
+            <div class="about-detail-value" style="color:var(--green)">● Open for Internship</div>
           </div>
           <div class="about-detail">
             <div class="about-detail-label">SPECIALIZATION</div>
-            <div class="about-detail-value">Full-Stack Development</div>
+            <div class="about-detail-value">AI/ML & Full Stack</div>
           </div>
           <div class="about-detail">
             <div class="about-detail-label">EDUCATION</div>
-            <div class="about-detail-value">B.S. Computer Science</div>
+            <div class="about-detail-value">B.Tech CSE (AI/ML) — GLA</div>
           </div>
         </div>
         <div class="tech-tags">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">Node.js</span>
           <span class="tech-tag">Python</span>
+          <span class="tech-tag">React.js</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">LangChain</span>
           <span class="tech-tag">PostgreSQL</span>
-          <span class="tech-tag">AWS</span>
           <span class="tech-tag">Docker</span>
-          <span class="tech-tag">GraphQL</span>
-          <span class="tech-tag">Next.js</span>
-          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">Azure</span>
+          <span class="tech-tag">Generative AI</span>
+          <span class="tech-tag">RAG</span>
         </div>
         <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="#" class="btn-primary" download>↓ Download Resume</a>
+          <a href="/resume/Abhigyan_Khare_Resume.pdf" class="btn-primary" download>↓ Download Resume</a>
           <a href="#contact" class="btn-secondary">Get in Touch</a>
         </div>
       </div>
@@ -1402,31 +1409,36 @@ Always learning, building, and exploring innovations in AI and development.
       What I bring<br><span class="grad-text">to the table.</span>
     </h2>
     <div class="skills-grid">
-      <!-- Frontend -->
+      <!-- AI & Machine Learning -->
       <div class="skill-category reveal" style="--glow-color:rgba(0,229,255,0.05);">
-        <div class="skill-category-icon" style="--icon-glow:rgba(0,229,255,0.4);">⚡</div>
-        <div class="skill-category-name">Frontend Development</div>
+        <div class="skill-category-icon" style="--icon-glow:rgba(0,229,255,0.4);">🧠</div>
+        <div class="skill-category-name">AI & Machine Learning</div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>React / Next.js</span><span>95%</span></div>
+          <div class="skill-item-header"><span>Machine Learning</span><span>95%</span></div>
           <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="95"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>TypeScript</span><span>90%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="90"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-item-header"><span>CSS / Tailwind</span><span>92%</span></div>
+          <div class="skill-item-header"><span>Generative AI</span><span>92%</span></div>
           <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="92"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>Vue / Nuxt</span><span>78%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="78"></div></div>
+          <div class="skill-item-header"><span>LangChain & RAG</span><span>90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>TensorFlow</span><span>88%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>Scikit-Learn</span><span>90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="90"></div></div>
         </div>
         <div class="skill-tools">
-          <span class="skill-tool-tag">Vite</span>
-          <span class="skill-tool-tag">Redux</span>
-          <span class="skill-tool-tag">GraphQL</span>
-          <span class="skill-tool-tag">Framer</span>
+          <span class="skill-tool-tag">LangChain</span>
+          <span class="skill-tool-tag">RAG</span>
+          <span class="skill-tool-tag">NLP</span>
+          <span class="skill-tool-tag">TensorFlow</span>
+          <span class="skill-tool-tag">Prompt Engineering</span>
         </div>
       </div>
       <!-- Backend -->
@@ -1434,53 +1446,95 @@ Always learning, building, and exploring innovations in AI and development.
         <div class="skill-category-icon" style="--icon-glow:rgba(176,107,255,0.4);">🔧</div>
         <div class="skill-category-name">Backend Development</div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>Node.js / Express</span><span>93%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="93"></div></div>
+          <div class="skill-item-header"><span>FastAPI</span><span>92%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="92"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>Python / FastAPI</span><span>87%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="87"></div></div>
+          <div class="skill-item-header"><span>Flask</span><span>90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="90"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>PostgreSQL / MongoDB</span><span>85%</span></div>
+          <div class="skill-item-header"><span>Django</span><span>85%</span></div>
           <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="85"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>REST / GraphQL APIs</span><span>95%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="95"></div></div>
+          <div class="skill-item-header"><span>Node.js</span><span>84%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="84"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>REST APIs</span><span>93%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar violet" data-width="93"></div></div>
         </div>
         <div class="skill-tools">
-          <span class="skill-tool-tag">Redis</span>
-          <span class="skill-tool-tag">Kafka</span>
-          <span class="skill-tool-tag">Prisma</span>
+          <span class="skill-tool-tag">Python</span>
           <span class="skill-tool-tag">JWT</span>
+          <span class="skill-tool-tag">REST</span>
+          <span class="skill-tool-tag">Authentication</span>
+          <span class="skill-tool-tag">SQL</span>
         </div>
       </div>
-      <!-- DevOps/Cloud -->
+      <!-- Frontend -->
       <div class="skill-category reveal" style="--glow-color:rgba(0,255,157,0.05); animation-delay:0.2s;">
-        <div class="skill-category-icon" style="--icon-glow:rgba(0,255,157,0.4);">☁️</div>
-        <div class="skill-category-name">Cloud & DevOps</div>
+        <div class="skill-category-icon" style="--icon-glow:rgba(0,255,157,0.4);">⚡</div>
+        <div class="skill-category-name">Frontend Development</div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>AWS (EC2/S3/Lambda)</span><span>88%</span></div>
+          <div class="skill-item-header"><span>React.js</span><span>92%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar green" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>JavaScript</span><span>88%</span></div>
           <div class="skill-bar-wrap"><div class="skill-bar green" data-width="88"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>Docker / Kubernetes</span><span>82%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar green" data-width="82"></div></div>
+          <div class="skill-item-header"><span>Tailwind CSS</span><span>90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar green" data-width="90"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>CI/CD Pipelines</span><span>85%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar green" data-width="85"></div></div>
+          <div class="skill-item-header"><span>HTML5</span><span>95%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar green" data-width="95"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-item-header"><span>Terraform / IaC</span><span>72%</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar green" data-width="72"></div></div>
+          <div class="skill-item-header"><span>CSS3</span><span>92%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar green" data-width="92"></div></div>
         </div>
         <div class="skill-tools">
-          <span class="skill-tool-tag">GCP</span>
-          <span class="skill-tool-tag">GitHub Actions</span>
-          <span class="skill-tool-tag">Nginx</span>
-          <span class="skill-tool-tag">Linux</span>
+          <span class="skill-tool-tag">React</span>
+          <span class="skill-tool-tag">Tailwind</span>
+          <span class="skill-tool-tag">Responsive</span>
+          <span class="skill-tool-tag">UI</span>
+          <span class="skill-tool-tag">Frontend</span>
+        </div>
+      </div>
+      <!-- Database & Cloud -->
+      <div class="skill-category reveal" style="--glow-color:rgba(255,122,47,0.05); animation-delay:0.3s;">
+        <div class="skill-category-icon" style="--icon-glow:rgba(255,122,47,0.4);">☁️</div>
+        <div class="skill-category-name">Database & Cloud</div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>PostgreSQL</span><span>90%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>MongoDB</span><span>86%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="86"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>MySQL</span><span>88%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>Docker</span><span>82%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="82"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span>Azure</span><span>85%</span></div>
+          <div class="skill-bar-wrap"><div class="skill-bar cyan" data-width="85"></div></div>
+        </div>
+        <div class="skill-tools">
+          <span class="skill-tool-tag">PostgreSQL</span>
+          <span class="skill-tool-tag">MongoDB</span>
+          <span class="skill-tool-tag">Docker</span>
+          <span class="skill-tool-tag">Azure</span>
+          <span class="skill-tool-tag">GitHub</span>
         </div>
       </div>
     </div>
@@ -1502,7 +1556,7 @@ Always learning, building, and exploring innovations in AI and development.
       <button class="filter-btn" data-filter="ai">AI/ML</button>
     </div>
     <div class="projects-grid">
-      <!-- Featured Project -->
+      <!-- Project 1 -->
       <div class="project-card featured-project reveal" data-category="fullstack ai">
         <div class="project-thumb" style="background:linear-gradient(135deg,#0a0a18 0%,#0f0f28 100%);">
           <div class="project-thumb-bg" style="background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(176,107,255,0.08));">
@@ -1510,7 +1564,7 @@ Always learning, building, and exploring innovations in AI and development.
           </div>
           <div class="project-overlay">
             <a href="#" class="project-link-btn live">Live Demo ↗</a>
-            <a href="#" class="project-link-btn github">GitHub ⌥</a>
+            <a href="https://github.com/Abhigyan-debug" class="project-link-btn github">GitHub ⌥</a>
           </div>
         </div>
         <div class="project-body">
@@ -1519,112 +1573,74 @@ Always learning, building, and exploring innovations in AI and development.
             <span class="project-badge">Full-Stack</span>
             <span class="project-badge">AI/ML</span>
           </div>
-          <div class="project-name">NeuralChat — AI-Powered SaaS Platform</div>
-          <p class="project-desc">A production-grade AI chat platform handling 1M+ messages/month. Built with React, FastAPI, WebSockets, and fine-tuned LLMs. Features real-time streaming, multi-model support, and team collaboration tools.</p>
+          <div class="project-name">NexusRAG — Enterprise AI Knowledge Management System</div>
+          <p class="project-desc">Enterprise RAG platform that retrieves intelligent answers from thousands of uploaded documents using LangChain, ChromaDB and Gemini. Features Role-based Authentication, Semantic Search, Vector Database, 10,000+ Document Chunks, and Sub-second Retrieval.</p>
         </div>
         <div class="project-footer">
-          <span class="project-tech">React</span>
+          <span class="project-tech">React.js</span>
           <span class="project-tech">FastAPI</span>
           <span class="project-tech">PostgreSQL</span>
-          <span class="project-tech">OpenAI</span>
-          <span class="project-tech">Redis</span>
-          <span class="project-tech">AWS</span>
+          <span class="project-tech">ChromaDB</span>
+          <span class="project-tech">LangChain</span>
+          <span class="project-tech">Gemini API</span>
+          <span class="project-tech">Docker</span>
         </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="project-card reveal" data-category="fullstack" style="animation-delay:0.1s;">
+      <div class="project-card reveal" data-category="fullstack ai" style="animation-delay:0.1s;">
         <div class="project-thumb" style="background:linear-gradient(135deg,#080814,#12080f);">
           <div class="project-thumb-bg" style="background:radial-gradient(ellipse,rgba(176,107,255,0.12),transparent);">
-            <span>🛒</span>
-          </div>
-          <div class="project-overlay">
-            <a href="#" class="project-link-btn live">Live Demo ↗</a>
-            <a href="#" class="project-link-btn github">GitHub ⌥</a>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-badges"><span class="project-badge">Full-Stack</span></div>
-          <div class="project-name">Nexus Commerce</div>
-          <p class="project-desc">High-performance e-commerce platform with real-time inventory, Stripe payments, and an ML-powered recommendation engine driving 30% revenue increase.</p>
-        </div>
-        <div class="project-footer">
-          <span class="project-tech">Next.js</span>
-          <span class="project-tech">Node.js</span>
-          <span class="project-tech">MongoDB</span>
-          <span class="project-tech">Stripe</span>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card reveal" data-category="frontend" style="animation-delay:0.15s;">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#080812,#081208);">
-          <div class="project-thumb-bg" style="background:radial-gradient(ellipse,rgba(0,255,157,0.1),transparent);">
             <span>📊</span>
           </div>
           <div class="project-overlay">
             <a href="#" class="project-link-btn live">Live Demo ↗</a>
-            <a href="#" class="project-link-btn github">GitHub ⌥</a>
+            <a href="https://github.com/Abhigyan-debug" class="project-link-btn github">GitHub ⌥</a>
           </div>
         </div>
         <div class="project-body">
-          <div class="project-badges"><span class="project-badge">Frontend</span></div>
-          <div class="project-name">Prism Dashboard</div>
-          <p class="project-desc">Real-time analytics dashboard with 3D data visualizations, 50+ chart types, and an AI-powered insights engine for business intelligence teams.</p>
+          <div class="project-badges">
+            <span class="project-badge">Full-Stack</span>
+            <span class="project-badge">AI/ML</span>
+          </div>
+          <div class="project-name">AI Recruitment Screening System</div>
+          <p class="project-desc">AI-powered hiring platform that parses resumes, ranks candidates and explains predictions using Explainable AI. Features Resume Parsing, Candidate Ranking, SHAP Explainability, and 85% Prediction Accuracy.</p>
         </div>
         <div class="project-footer">
-          <span class="project-tech">React</span>
-          <span class="project-tech">D3.js</span>
-          <span class="project-tech">Three.js</span>
-          <span class="project-tech">WebGL</span>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card reveal" data-category="backend" style="animation-delay:0.2s;">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#080810,#100808);">
-          <div class="project-thumb-bg" style="background:radial-gradient(ellipse,rgba(255,122,47,0.1),transparent);">
-            <span>⚡</span>
-          </div>
-          <div class="project-overlay">
-            <a href="#" class="project-link-btn live">Live Demo ↗</a>
-            <a href="#" class="project-link-btn github">GitHub ⌥</a>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-badges"><span class="project-badge">Backend</span></div>
-          <div class="project-name">Velocity API Gateway</div>
-          <p class="project-desc">High-throughput API gateway handling 50K req/sec with intelligent rate limiting, auth middleware, analytics, and a developer-friendly admin portal.</p>
-        </div>
-        <div class="project-footer">
-          <span class="project-tech">Node.js</span>
-          <span class="project-tech">Redis</span>
-          <span class="project-tech">Docker</span>
-          <span class="project-tech">K8s</span>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="project-card reveal" data-category="ai" style="animation-delay:0.25s;">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#08080e,#0a080f);">
-          <div class="project-thumb-bg" style="background:radial-gradient(ellipse,rgba(255,77,184,0.1),transparent);">
-            <span>🧠</span>
-          </div>
-          <div class="project-overlay">
-            <a href="#" class="project-link-btn live">Live Demo ↗</a>
-            <a href="#" class="project-link-btn github">GitHub ⌥</a>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-badges"><span class="project-badge">AI/ML</span></div>
-          <div class="project-name">Synthwave — Image AI</div>
-          <p class="project-desc">Text-to-image generation platform with fine-tuned Stable Diffusion models, style transfer, and a marketplace for AI-generated artwork NFTs.</p>
-        </div>
-        <div class="project-footer">
-          <span class="project-tech">Python</span>
-          <span class="project-tech">PyTorch</span>
+          <span class="project-tech">React.js</span>
           <span class="project-tech">FastAPI</span>
-          <span class="project-tech">React</span>
+          <span class="project-tech">TensorFlow</span>
+          <span class="project-tech">Scikit-Learn</span>
+          <span class="project-tech">NLP</span>
+          <span class="project-tech">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card reveal" data-category="fullstack ai" style="animation-delay:0.15s;">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#080812,#081208);">
+          <div class="project-thumb-bg" style="background:radial-gradient(ellipse,rgba(0,255,157,0.1),transparent);">
+            <span>📈</span>
+          </div>
+          <div class="project-overlay">
+            <a href="#" class="project-link-btn live">Live Demo ↗</a>
+            <a href="https://github.com/Abhigyan-debug" class="project-link-btn github">GitHub ⌥</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-badges">
+            <span class="project-badge">Full-Stack</span>
+            <span class="project-badge">AI/ML</span>
+          </div>
+          <div class="project-name">CX Analytics — AI Powered Customer Experience Analysis</div>
+          <p class="project-desc">Customer Experience Intelligence platform that performs sentiment analysis on customer feedback using NLP and Machine Learning. Features Sentiment Analysis, Analytics Dashboard, Reports, Admin Panel, and 88% Model Accuracy.</p>
+        </div>
+        <div class="project-footer">
+          <span class="project-tech">React.js</span>
+          <span class="project-tech">Flask</span>
+          <span class="project-tech">Scikit-Learn</span>
+          <span class="project-tech">Pandas</span>
+          <span class="project-tech">SQL</span>
         </div>
       </div>
     </div>
@@ -1648,48 +1664,47 @@ Always learning, building, and exploring innovations in AI and development.
     <!-- Experience Timeline -->
     <div class="timeline" id="exp-timeline">
       <div class="timeline-item reveal">
-        <div class="timeline-date">2023<br>Present</div>
+        <div class="timeline-date">2024<br>Present</div>
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-title">Senior Full-Stack Engineer</div>
-          <div class="timeline-org">Stripe Inc. — San Francisco, CA</div>
-          <p class="timeline-desc">Leading a cross-functional team of 8 engineers building next-gen payment infrastructure. Architected a microservices platform processing $2B in monthly transactions. Reduced API latency by 60% through Redis caching and query optimization.</p>
+          <div class="timeline-title">Generative AI Projects</div>
+          <div class="timeline-org">Independent Development</div>
+          <p class="timeline-desc">Building enterprise-grade Generative AI and RAG (Retrieval-Augmented Generation) applications. Developing intelligent knowledge management systems using modern LLMs, LangChain, vector databases, and scalable backend frameworks.</p>
           <div class="timeline-tags">
-            <span class="timeline-tag">React</span>
-            <span class="timeline-tag">Node.js</span>
-            <span class="timeline-tag">Go</span>
-            <span class="timeline-tag">PostgreSQL</span>
-            <span class="timeline-tag">Kubernetes</span>
+            <span class="timeline-tag">LangChain</span>
+            <span class="timeline-tag">RAG</span>
+            <span class="timeline-tag">Gemini API</span>
+            <span class="timeline-tag">ChromaDB</span>
           </div>
         </div>
       </div>
       <div class="timeline-item reveal" style="animation-delay:0.1s;">
-        <div class="timeline-date">2021<br>2023</div>
+        <div class="timeline-date">2023<br>2024</div>
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-title">Full-Stack Engineer</div>
-          <div class="timeline-org">Vercel — Remote</div>
-          <p class="timeline-desc">Built and maintained core features for Vercel's deployment platform serving 500K+ developers. Shipped the Edge Functions product from prototype to GA, handling 10B+ requests/month.</p>
+          <div class="timeline-title">AI Projects</div>
+          <div class="timeline-org">Academic & Personal Projects</div>
+          <p class="timeline-desc">Developed machine learning models for natural language processing, sentiment analysis, and predictive analytics. Implemented end-to-end AI pipelines integrated with robust backend architectures.</p>
           <div class="timeline-tags">
-            <span class="timeline-tag">TypeScript</span>
-            <span class="timeline-tag">Next.js</span>
-            <span class="timeline-tag">Rust</span>
-            <span class="timeline-tag">AWS Lambda</span>
+            <span class="timeline-tag">Machine Learning</span>
+            <span class="timeline-tag">NLP</span>
+            <span class="timeline-tag">TensorFlow</span>
+            <span class="timeline-tag">Scikit-Learn</span>
           </div>
         </div>
       </div>
       <div class="timeline-item reveal" style="animation-delay:0.2s;">
-        <div class="timeline-date">2019<br>2021</div>
+        <div class="timeline-date">2022<br>Present</div>
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-title">Frontend Engineer</div>
-          <div class="timeline-org">Figma — San Francisco, CA</div>
-          <p class="timeline-desc">Contributed to Figma's core canvas rendering engine and component library. Built the Figma plugin marketplace, onboarding 10,000+ third-party plugins within 6 months of launch.</p>
+          <div class="timeline-title">Open Source Learning & Continuous Learning</div>
+          <div class="timeline-org">Self-Driven Learning</div>
+          <p class="timeline-desc">Continuously expanding skills in full-stack development, modern cloud technologies, system design, and algorithms through competitive programming and open-source contributions.</p>
           <div class="timeline-tags">
-            <span class="timeline-tag">React</span>
-            <span class="timeline-tag">WebGL</span>
-            <span class="timeline-tag">TypeScript</span>
-            <span class="timeline-tag">WASM</span>
+            <span class="timeline-tag">Full-Stack</span>
+            <span class="timeline-tag">Cloud</span>
+            <span class="timeline-tag">DSA</span>
+            <span class="timeline-tag">System Design</span>
           </div>
         </div>
       </div>
@@ -1697,31 +1712,17 @@ Always learning, building, and exploring innovations in AI and development.
     <!-- Education Timeline -->
     <div class="timeline" id="edu-timeline" style="display:none;">
       <div class="timeline-item reveal">
-        <div class="timeline-date">2015<br>2019</div>
+        <div class="timeline-date">2024<br>2028</div>
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-title">B.S. Computer Science</div>
-          <div class="timeline-org">Massachusetts Institute of Technology (MIT)</div>
-          <p class="timeline-desc">Graduated with honors (GPA: 3.9/4.0). Specialized in Distributed Systems and Human-Computer Interaction. Senior thesis on real-time collaborative editing algorithms.</p>
+          <div class="timeline-title">B.Tech Computer Science Engineering</div>
+          <div class="timeline-org">GLA University</div>
+          <p class="timeline-desc">Specialization in Artificial Intelligence & Machine Learning. Expected Graduation: 2028. Current CGPA: 6.9.</p>
           <div class="timeline-tags">
+            <span class="timeline-tag">Data Structures</span>
             <span class="timeline-tag">Algorithms</span>
-            <span class="timeline-tag">HCI</span>
-            <span class="timeline-tag">Distributed Systems</span>
-            <span class="timeline-tag">ML</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item reveal" style="animation-delay:0.1s;">
-        <div class="timeline-date">2022</div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-title">AWS Solutions Architect — Professional</div>
-          <div class="timeline-org">Amazon Web Services Certification</div>
-          <p class="timeline-desc">Certified in designing distributed systems, high-availability architectures, and AWS services spanning compute, storage, networking, and security at enterprise scale.</p>
-          <div class="timeline-tags">
-            <span class="timeline-tag">AWS</span>
-            <span class="timeline-tag">Cloud Architecture</span>
-            <span class="timeline-tag">DevOps</span>
+            <span class="timeline-tag">DBMS</span>
+            <span class="timeline-tag">Operating Systems</span>
           </div>
         </div>
       </div>
@@ -1729,132 +1730,33 @@ Always learning, building, and exploring innovations in AI and development.
   </div>
 </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="section" style="background:var(--bg2);">
+<!-- Certifications Section -->
+<section id="certifications" class="section" style="background:var(--bg2);">
   <div class="container">
-    <div class="section-label reveal">Testimonials</div>
+    <div class="section-label reveal">Certifications</div>
     <h2 class="section-title reveal" style="margin-bottom:56px;">
-      What people<br><span class="grad-text">say about me.</span>
+      Verified<br><span class="grad-text">skills & knowledge.</span>
     </h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Alex is an exceptional engineer. The architecture he designed for our payment platform is bulletproof — we've had zero downtime since launch. Truly one of the best I've worked with.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👩‍💼</div>
-          <div>
-            <div class="testimonial-name">Sarah Chen</div>
-            <div class="testimonial-role">CTO @ FinTech Innovations</div>
-          </div>
-        </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:20px;margin-top:32px;" class="reveal">
+      <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
+        <div style="font-size:2rem;margin-bottom:12px;">☁️</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin-bottom:8px;">Azure AI Fundamentals</div>
+        <div style="font-size:0.85rem;color:var(--text3);font-family:var(--font-mono);">Microsoft (AI-900)</div>
       </div>
-      <div class="testimonial-card reveal" style="animation-delay:0.1s;">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Delivered a complex AI SaaS in 3 months — on time, on budget, and beyond expectations. Alex's communication is superb, and his code quality is immaculate. Would hire again without hesitation.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👨‍🚀</div>
-          <div>
-            <div class="testimonial-name">Marcus Rivera</div>
-            <div class="testimonial-role">Founder @ NovaSpark AI</div>
-          </div>
-        </div>
+      <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
+        <div style="font-size:2rem;margin-bottom:12px;">💻</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin-bottom:8px;">Azure Fundamentals</div>
+        <div style="font-size:0.85rem;color:var(--text3);font-family:var(--font-mono);">Microsoft (AZ-900)</div>
       </div>
-      <div class="testimonial-card reveal" style="animation-delay:0.2s;">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">We brought Alex in to rescue a stalled project. Within two weeks he had diagnosed every issue and within a month the platform was live. Incredible problem-solving ability.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">🧑‍💻</div>
-          <div>
-            <div class="testimonial-name">Priya Sharma</div>
-            <div class="testimonial-role">Product Lead @ TechCorp</div>
-          </div>
-        </div>
+      <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
+        <div style="font-size:2rem;margin-bottom:12px;">🏆</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin-bottom:8px;">Problem Solving</div>
+        <div style="font-size:0.85rem;color:var(--text3);font-family:var(--font-mono);">HackerRank</div>
       </div>
-    </div>
-    <!-- Achievements -->
-    <div style="margin-top:80px;">
-      <div class="section-label reveal">Achievements</div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px;" class="reveal">
-        <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">🏆</div>
-          <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem;margin-bottom:4px;">GitHub Star</div>
-          <div style="font-size:0.78rem;color:var(--text3);font-family:var(--font-mono);">2,000+ stars on open source</div>
-        </div>
-        <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">📝</div>
-          <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem;margin-bottom:4px;">Top Writer</div>
-          <div style="font-size:0.78rem;color:var(--text3);font-family:var(--font-mono);">Dev.to & Medium Top 1%</div>
-        </div>
-        <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">🎤</div>
-          <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem;margin-bottom:4px;">Conference Speaker</div>
-          <div style="font-size:0.78rem;color:var(--text3);font-family:var(--font-mono);">ReactConf, NodeConf 2024</div>
-        </div>
-        <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">🎯</div>
-          <div style="font-family:var(--font-display);font-weight:700;font-size:0.95rem;margin-bottom:4px;">Hackathon Winner</div>
-          <div style="font-size:0.78rem;color:var(--text3);font-family:var(--font-mono);">3× First Place — 2022–2024</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Blog Section -->
-<section id="blog" class="section">
-  <div class="container">
-    <div class="section-label reveal">Blog</div>
-    <h2 class="section-title reveal" style="margin-bottom:56px;">
-      Thoughts &<br><span class="grad-text">articles.</span>
-    </h2>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(176,107,255,0.08));">🏗️</div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-category">Architecture</span>
-            <span>Mar 15, 2025</span>
-          </div>
-          <div class="blog-title">Building Microservices That Don't Fall Apart at Scale</div>
-          <p class="blog-excerpt">A deep-dive into patterns for resilient service-to-service communication, circuit breaking, and observability in distributed systems.</p>
-        </div>
-        <div class="blog-footer">
-          <div class="blog-read-more">Read Article →</div>
-          <div class="blog-read-time">8 min read</div>
-        </div>
-      </div>
-      <div class="blog-card reveal" style="animation-delay:0.1s;">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(176,107,255,0.08),rgba(255,77,184,0.08));">⚛️</div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-category">React</span>
-            <span>Feb 28, 2025</span>
-          </div>
-          <div class="blog-title">React Server Components: The Full Mental Model</div>
-          <p class="blog-excerpt">Everything I wish I'd known before shipping RSC to production — from streaming rendering to data colocation patterns.</p>
-        </div>
-        <div class="blog-footer">
-          <div class="blog-read-more">Read Article →</div>
-          <div class="blog-read-time">12 min read</div>
-        </div>
-      </div>
-      <div class="blog-card reveal" style="animation-delay:0.2s;">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,rgba(0,255,157,0.08),rgba(0,229,255,0.08));">🤖</div>
-        <div class="blog-body">
-          <div class="blog-meta">
-            <span class="blog-category">AI/ML</span>
-            <span>Jan 10, 2025</span>
-          </div>
-          <div class="blog-title">Integrating LLMs into Production Web Apps Without Losing Your Mind</div>
-          <p class="blog-excerpt">Practical patterns for streaming, caching, fallbacks, and cost optimization when building AI-powered features.</p>
-        </div>
-        <div class="blog-footer">
-          <div class="blog-read-more">Read Article →</div>
-          <div class="blog-read-time">10 min read</div>
-        </div>
+      <div style="padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
+        <div style="font-size:2rem;margin-bottom:12px;">🌍</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin-bottom:8px;">Intro to Env. Engineering</div>
+        <div style="font-size:0.85rem;color:var(--text3);font-family:var(--font-mono);">IIT Kharagpur</div>
       </div>
     </div>
   </div>
@@ -1876,33 +1778,33 @@ Always learning, building, and exploring innovations in AI and development.
             <div class="contact-item-icon">📧</div>
             <div>
               <div class="contact-item-label">EMAIL</div>
-              <div class="contact-item-value">alex@nova.dev</div>
+              <div class="contact-item-value">khareabhigyan2@gmail.com</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📍</div>
             <div>
               <div class="contact-item-label">LOCATION</div>
-              <div class="contact-item-value">San Francisco, CA</div>
+              <div class="contact-item-value">Lucknow, India</div>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon">⏰</div>
+            <div class="contact-item-icon">📱</div>
             <div>
-              <div class="contact-item-label">RESPONSE TIME</div>
-              <div class="contact-item-value">Within 24 hours</div>
+              <div class="contact-item-label">PHONE</div>
+              <div class="contact-item-value">+91-9140954366</div>
             </div>
           </div>
         </div>
         <div class="contact-social-row">
-          <a href="#" class="contact-social-btn">
+          <a href="https://github.com/Abhigyan-debug" class="contact-social-btn" target="_blank">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.02-.01-2-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
-          <a href="#" class="contact-social-btn">
+          <a href="https://www.linkedin.com/in/abhigyan-khare-169a31255" class="contact-social-btn" target="_blank">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
           </a>
-          <a href="#" class="contact-social-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2h3.55l-7.76 8.87L23 22h-7.15l-5.6-7.32L4.04 22H.49l8.3-9.5L1 2h7.32l5.06 6.69L18.24 2zm-1.25 18h1.97L7.1 4.04H5L17 20z"/></svg>
+          <a href="https://leetcode.com/u/abhigyan_khare" class="contact-social-btn" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
           </a>
         </div>
       </div>
@@ -1919,11 +1821,11 @@ Always learning, building, and exploring innovations in AI and development.
         </div>
         <div class="form-group">
           <label class="form-label">SUBJECT</label>
-          <input type="text" class="form-input" id="contact-subject" placeholder="Project inquiry / Collaboration / Job offer...">
+          <input type="text" class="form-input" id="contact-subject" placeholder="Project inquiry / Internship / Collaboration...">
         </div>
         <div class="form-group">
           <label class="form-label">MESSAGE</label>
-          <textarea class="form-textarea" id="contact-message" placeholder="Tell me about your project, timeline, and budget..."></textarea>
+          <textarea class="form-textarea" id="contact-message" placeholder="Tell me about your project or opportunity..."></textarea>
         </div>
         <button class="form-submit" onclick="submitForm()">
           Send Message ✦
@@ -1941,8 +1843,8 @@ Always learning, building, and exploring innovations in AI and development.
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">Alex Nova.</div>
-        <p class="footer-bio">Full-stack engineer passionate about building products that matter. Available for freelance, consulting, and full-time opportunities.</p>
+        <div class="footer-logo">Abhigyan Khare.</div>
+        <p class="footer-bio">AI/ML Engineer & Full Stack Developer passionate about building intelligent systems. Available for internship opportunities.</p>
         <div class="visitor-counter">
           <span class="vc-dot"></span>
           <span id="visitor-count">2,847</span> visitors this month
@@ -1961,26 +1863,22 @@ Always learning, building, and exploring innovations in AI and development.
       <div>
         <div class="footer-col-title">Work</div>
         <ul class="footer-links">
-          <li><a href="#">Open Source</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#">Speaking</a></li>
-          <li><a href="#">Resume</a></li>
+          <li><a href="https://github.com/Abhigyan-debug" target="_blank">Open Source</a></li>
+          <li><a href="/resume/Abhigyan_Khare_Resume.pdf" download>Resume</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Connect</div>
         <ul class="footer-links">
-          <li><a href="#">GitHub</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Twitter / X</a></li>
-          <li><a href="#">Dribbble</a></li>
-          <li><a href="#">Email Me</a></li>
+          <li><a href="https://github.com/Abhigyan-debug" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/abhigyan-khare-169a31255" target="_blank">LinkedIn</a></li>
+          <li><a href="https://leetcode.com/u/abhigyan_khare" target="_blank">LeetCode</a></li>
+          <li><a href="mailto:khareabhigyan2@gmail.com">Email Me</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Alex Nova. Crafted with ♥ and ☕</span>
+      <span>© 2025 Abhigyan Khare. Crafted with ♥ and ☕</span>
       <span style="font-family:var(--font-mono);">Built with HTML · CSS · JS</span>
     </div>
   </div>
@@ -1997,8 +1895,8 @@ Always learning, building, and exploring innovations in AI and development.
       <div class="hire-modal-option" onclick="closeHireModalGoTo('#contact')">
         <span class="hire-modal-opt-icon">💼</span>
         <div>
-          <div class="hire-modal-opt-label">Full-time Role</div>
-          <div class="hire-modal-opt-desc">Looking for a senior engineer to join your team</div>
+          <div class="hire-modal-opt-label">Internship Role</div>
+          <div class="hire-modal-opt-desc">Looking for a passionate intern to join your AI/ML or Software Engineering team</div>
         </div>
       </div>
       <div class="hire-modal-option" onclick="closeHireModalGoTo('#contact')">
@@ -2011,8 +1909,8 @@ Always learning, building, and exploring innovations in AI and development.
       <div class="hire-modal-option" onclick="closeHireModalGoTo('#contact')">
         <span class="hire-modal-opt-icon">🤝</span>
         <div>
-          <div class="hire-modal-opt-label">Consulting / Advisory</div>
-          <div class="hire-modal-opt-desc">Architecture review, tech strategy, or mentorship</div>
+          <div class="hire-modal-opt-label">Hackathons / Open Source</div>
+          <div class="hire-modal-opt-desc">Looking for a skilled developer to collaborate with</div>
         </div>
       </div>
     </div>
@@ -2024,6 +1922,9 @@ Always learning, building, and exploring innovations in AI and development.
   <button class="float-ctrl" id="theme-toggle" title="Toggle theme">🌙</button>
   <button class="float-ctrl" id="music-toggle" title="Toggle ambient sound">🎵</button>
 </div>
+<audio id="bg-music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+</audio>
 
 <!-- Chatbot -->
 <button id="chatbot-btn" onclick="toggleChatbot()">💬</button>
@@ -2031,18 +1932,18 @@ Always learning, building, and exploring innovations in AI and development.
   <div class="chatbot-header">
     <div class="chatbot-avatar">🤖</div>
     <div>
-      <div class="chatbot-name">Nova Bot</div>
+      <div class="chatbot-name">Abhi AI</div>
       <div class="chatbot-status">● Online — usually replies instantly</div>
     </div>
     <button class="chatbot-close" onclick="toggleChatbot()">✕</button>
   </div>
   <div class="chatbot-messages" id="chatbot-messages">
-    <div class="chat-msg bot">Hi! I'm Nova, Alex's AI assistant. 👋 Ask me anything about Alex's work, skills, or availability!</div>
+    <div class="chat-msg bot">Hi! I'm Abhi AI, Abhigyan's AI assistant. 👋 Ask me anything about his work, skills, or availability!</div>
   </div>
   <div class="chat-quick-replies" id="quick-replies">
-    <button class="quick-reply" onclick="sendQuickReply('What are your skills?')">Skills?</button>
-    <button class="quick-reply" onclick="sendQuickReply('Are you available for hire?')">Available?</button>
-    <button class="quick-reply" onclick="sendQuickReply('Show me your projects')">Projects</button>
+    <button class="quick-reply" onclick="sendQuickReply('Tell me about Abhigyan.')">About?</button>
+    <button class="quick-reply" onclick="sendQuickReply('What projects has he built?')">Projects?</button>
+    <button class="quick-reply" onclick="sendQuickReply('Show resume.')">Resume</button>
   </div>
   <div class="chatbot-input-wrap">
     <input class="chatbot-input" id="chatbot-input" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendChatMsg()">
@@ -2338,23 +2239,47 @@ function switchTab(tab) {
 /* ═══════════════════════════════════════════
    CONTACT FORM
 ═══════════════════════════════════════════ */
-function submitForm() {
+async function submitForm() {
   const name = document.getElementById('contact-name').value;
   const email = document.getElementById('contact-email').value;
+  const subject = document.getElementById('contact-subject').value;
   const message = document.getElementById('contact-message').value;
+  
   if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
-  // Simulate form submission
+  
   const btn = document.querySelector('.form-submit');
   btn.textContent = 'Sending...'; btn.style.opacity = '0.7';
-  setTimeout(() => {
+  
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, subject, message })
+    });
+    
+    if (res.ok) {
+      btn.textContent = 'Send Message ✦'; btn.style.opacity = '1';
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('form-success').style.color = '#00ff9d';
+      document.getElementById('form-success').textContent = "✅ Message received! I'll get back to you within 24 hours.";
+      
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-email').value = '';
+      document.getElementById('contact-subject').value = '';
+      document.getElementById('contact-message').value = '';
+      
+      setTimeout(() => document.getElementById('form-success').style.display = 'none', 5000);
+    } else {
+      throw new Error('Failed to send');
+    }
+  } catch (err) {
     btn.textContent = 'Send Message ✦'; btn.style.opacity = '1';
     document.getElementById('form-success').style.display = 'block';
-    document.getElementById('contact-name').value = '';
-    document.getElementById('contact-email').value = '';
-    document.getElementById('contact-subject').value = '';
-    document.getElementById('contact-message').value = '';
+    document.getElementById('form-success').style.color = '#ff4d4d';
+    document.getElementById('form-success').textContent = "❌ Failed to send message. Please check your connection or try again.";
+    
     setTimeout(() => document.getElementById('form-success').style.display = 'none', 5000);
-  }, 1500);
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -2378,13 +2303,25 @@ function closeMobileMenu() { document.getElementById('mobile-menu').classList.re
    CHATBOT
 ═══════════════════════════════════════════ */
 const chatKB = {
-  'skill': 'Alex is proficient in React, TypeScript, Node.js, Python, PostgreSQL, AWS, Docker, and more. Over 6 years of full-stack experience! 🚀',
-  'project': 'Alex has built 50+ projects including an AI SaaS platform, e-commerce systems, and developer tools. Check the Projects section above! 💻',
-  'hire': "Alex is currently open to full-time roles, freelance projects, and consulting. Let's connect — head to the Contact section! 💼",
-  'available': "Yes! Alex is actively looking for new opportunities. Response time is usually within 24 hours. 🟢",
-  'experience': 'Alex has worked at Stripe, Vercel, and Figma — 6+ years building at scale. 🏢',
-  'contact': 'You can reach Alex at alex@nova.dev or use the Contact form on this page. 📧',
-  'default': "Great question! I'm just a simple bot, but you can get full details by exploring the portfolio or reaching out via the Contact form. 😊"
+  'about': "Abhigyan is a Computer Science undergrad at GLA University specializing in AI & ML. He loves building intelligent systems! 🤖",
+  'skill': "He is proficient in Python, FastAPI, React, LangChain, TensorFlow, and more. A true full-stack AI engineer! ⚡",
+  'project': "Abhigyan has built tools like NexusRAG, an AI Recruitment System, and CX Analytics platforms. Check the Projects section! 💻",
+  'hire': "Yes! He is open to AI/ML and Software Engineering internships. Use the contact form to reach out! 💼",
+  'available': "Yes, Abhigyan is available for internships and open source collaborations. 🟢",
+  'experience': "He has experience building Generative AI applications, developing machine learning pipelines, and actively contributes to open source. 🏢",
+  'resume': "You can download his resume by clicking the 'Download Resume' button at the top or in the About section! 📄",
+  'education': "He is currently pursuing B.Tech in CSE (AI/ML) at GLA University, graduating in 2028. 🎓",
+  'certifications': "He holds certifications in Azure AI Fundamentals, Azure Fundamentals, and more! 🏆",
+  'strength': "Abhigyan's biggest strength is his ability to learn new technologies quickly and build end-to-end applications combining Full Stack development with AI/ML. He adapts fast! ⚡",
+  'weakness': "In the past, Abhigyan used to spend too much time perfecting every feature before moving on. Now, he's improving by prioritizing core functionality first and refining based on feedback! 💪",
+  'challenge': "One of his biggest challenges was integrating AI into his CX Analytics project (frontend, backend, PostgreSQL, and sentiment models). He solved it by debugging each component separately and improving the API structure! 🧩",
+  'why_hire': "Abhigyan brings a great mix of AI/ML and Full Stack skills (React, Python, PostgreSQL, RAG). He's a fast learner, adaptable, and focuses on writing clean, maintainable code to solve real-world problems. 🌟",
+  'teamwork': "Abhigyan believes communication is key! When disagreements happen, he listens to everyone's perspective, discusses technical pros/cons, and chooses what fits the project best. He highly values constructive feedback. 🤝",
+  'relocation': "Yes! Abhigyan is open to relocating for the right opportunity, and he is also comfortable working in hybrid or remote environments. ✈️",
+  'compensation': "He is open to discussion regarding compensation. His main priority right now is gaining hands-on experience and contributing meaningfully, with fair compensation aligned with the role. 💰",
+  'hobbies': "Outside of coding, Abhigyan enjoys learning about the latest AI technologies, solving programming problems, exploring new dev tools, and reading about AI advancements! 📚",
+  'goals': "In the next 2–3 years, Abhigyan sees himself working as a skilled AI/ML or Full Stack Software Engineer, contributing to impactful products, and deepening his expertise in cloud technologies and scalable architecture. 🚀",
+  'default': "Great question! I'm Abhi AI, I might not know everything, but you can get full details by exploring the portfolio or reaching out via the Contact form. 😊"
 };
 function toggleChatbot() {
   const panel = document.getElementById('chatbot-panel');
@@ -2399,9 +2336,35 @@ function sendChatMsg() {
   setTimeout(() => {
     const lower = text.toLowerCase();
     let reply = chatKB.default;
-    for (const [key, val] of Object.entries(chatKB)) {
-      if (lower.includes(key)) { reply = val; break; }
+    
+    const intents = {
+      project: ['project', 'built', 'made', 'created', 'portfolio', 'work', 'done', 'app'],
+      skill: ['skill', 'tech', 'stack', 'language', 'framework', 'know', 'tools', 'expertise', 'expert', 'good at', 'proficient'],
+      hire: ['hire', 'internship', 'job', 'recruit', 'opportunity'],
+      about: ['about', 'who', 'background', 'intro', 'abhigyan', 'hello', 'hi', 'hey'],
+      available: ['available', 'free', 'time'],
+      experience: ['experience', 'work', 'company', 'history', 'past', 'role'],
+      resume: ['resume', 'cv', 'pdf', 'download'],
+      education: ['education', 'degree', 'university', 'college', 'school', 'study'],
+      certifications: ['certification', 'certificate', 'course', 'azure'],
+      strength: ['strength', 'good at', 'strong'],
+      weakness: ['weakness', 'weaknesses', 'bad at', 'improve', 'flaw'],
+      challenge: ['challenge', 'difficult', 'hardest', 'overcame', 'problem solving', 'solved', 'struggle', 'mistake', 'failure'],
+      why_hire: ['why hire', 'why should we hire', 'stand out', 'bring to the table', 'unique', 'choose you', 'hire you'],
+      teamwork: ['team', 'teamwork', 'conflict', 'disagreement', 'collaborate', 'communication', 'feedback', 'coworker', 'colleague'],
+      relocation: ['relocate', 'move', 'location', 'remote', 'hybrid', 'travel'],
+      compensation: ['salary', 'compensation', 'stipend', 'pay', 'money', 'expectation'],
+      hobbies: ['hobby', 'hobbies', 'free time', 'outside of work', 'fun', 'enjoy', 'weekend'],
+      goals: ['goal', 'future', '5 years', '2 years', '3 years', 'see yourself', 'vision', 'career']
+    };
+    
+    for (const [key, keywords] of Object.entries(intents)) {
+      if (keywords.some(kw => lower.includes(kw))) {
+        reply = chatKB[key] || chatKB.default;
+        break;
+      }
     }
+    
     appendChat(reply, 'bot');
   }, 700);
 }
@@ -2437,6 +2400,29 @@ document.getElementById('visitor-count').textContent = base.toLocaleString();
 document.querySelectorAll('.projects-grid .project-card').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.08}s`;
 });
+
+/* ═══════════════════════════════════════════
+   MUSIC TOGGLE
+═══════════════════════════════════════════ */
+const musicToggle = document.getElementById('music-toggle');
+const bgMusic = document.getElementById('bg-music');
+if (musicToggle && bgMusic) {
+  // Lower volume for ambient vibe
+  bgMusic.volume = 0.3;
+  musicToggle.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().catch(e => console.log('Audio play failed:', e));
+      musicToggle.style.opacity = '1';
+      musicToggle.style.transform = 'scale(1.1)';
+      musicToggle.textContent = '🔊';
+    } else {
+      bgMusic.pause();
+      musicToggle.style.opacity = '0.7';
+      musicToggle.style.transform = 'scale(1)';
+      musicToggle.textContent = '🎵';
+    }
+  });
+}
 </script>
 </body>
 </html>
