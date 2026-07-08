@@ -15,6 +15,8 @@ const jwt = require('jsonwebtoken');
 const path = require('path');
 
 const app = express();
+
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3000;
 
 // ─── MIDDLEWARE ───────────────────────────
@@ -36,11 +38,11 @@ console.log(`📡 Connecting to MongoDB: ${MONGODB_URI.replace(/\/\/.*@/, '//***
 mongoose.connect(MONGODB_URI)
   .then(() => console.log('✅ MongoDB connected successfully'))
   .catch(err => {
-    console.error('❌ MongoDB connection FAILED:', err.message);
-    console.error('   Check your MONGODB_URI in .env and ensure your Atlas credentials are correct.');
-    console.error('   Also verify your IP is whitelisted in Atlas → Network Access.');
-    process.exit(1);
-  });
+  console.error("===== FULL MONGOOSE ERROR =====");
+  console.error(err);
+  process.exit(1);
+});
+
 
 // ─── SCHEMAS & MODELS ─────────────────────
 
